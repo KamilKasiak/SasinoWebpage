@@ -1,0 +1,28 @@
+@import '../App.scss';
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  background-color: $secondary;
+  .page {
+    font-family: stone, sans-serif;
+    color: #fff;
+    h2 {
+      font-size: 2.5rem;
+      line-height: 125%;
+      padding: 1rem 0rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+      line-height: 125%;
+    }
+    .container {
+      padding: 4%;
+    }
+    button {
+      background-color: $primary;
+      color: $secondary;
+    }
+  }
+}

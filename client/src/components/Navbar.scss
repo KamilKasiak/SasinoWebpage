@@ -1,0 +1,33 @@
+@import '../App.scss';
+
+.navbar {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  padding: 4%;
+  background-color: $secondary;
+  .left-nav {
+    flex: 1;
+    h1 {
+      margin-left: 0.5rem;
+      font-family: 'stone', 'sans-serif';
+      font-size: 0.8rem;
+    }
+    .logo {
+      display: flex;
+      color: #fff;
+      align-items: center;
+      img {
+        width: 2.5rem;
+      }
+    }
+  }
+  .mid-nav {
+    flex: 1;
+    color: black;
+  }
+
+  .links {
+    display: none;
+  }
+}
