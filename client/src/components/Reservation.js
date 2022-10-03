@@ -5,9 +5,9 @@ const Reservation = () => {
     <div className='container reservation'>
       <h2>Let your mind breathe!</h2>
       <h3>You will rest with us.</h3>
-      <div class='call-to-action'>
-        <button class='cta-sec'>Check availability</button>
-        <button class='cta-main'>Sign up today</button>
+      <div className='call-to-action'>
+        <button className='cta-main'>Check availability</button>
+        <button className='cta-sec'>Watch photos</button>
       </div>
     </div>
   );

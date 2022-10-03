@@ -4,18 +4,20 @@
   width: 100%;
   min-height: 100vh;
   position: absolute;
-  background-color: $secondary;
+
   .page {
     font-family: stone, sans-serif;
-    color: #fff;
+    color: #38e54d;
     h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       line-height: 125%;
       padding: 1rem 0rem;
+      text-shadow: 4px 4px 8px #181818;
     }
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       line-height: 125%;
+      text-shadow: 4px 4px 8px #181818;
     }
     .container {
       padding: 4%;
@@ -23,6 +25,16 @@
     button {
       background-color: $primary;
       color: $secondary;
+      text-shadow: 4px 4px 8px #181818;
     }
+  }
+  .outsideLanding {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
   }
 }
