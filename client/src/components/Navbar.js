@@ -1,18 +1,18 @@
 import './Navbar.scss';
-import logo from '../assets/home-logo.png';
+// import logo from '../assets/home-logo.png';
 
 const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='left-nav'>
-        <div className='logo'>
+        {/* <div className='logo'>
           <img src={logo} alt='Dom Pod Dębami' />
           <h1>Dom Pod Dębami</h1>
-        </div>
+        </div> */}
       </div>
       <div className='mid-nav'>
         <div className='links'>
-          <a href='https://google.com'>Home</a>
+          <a href='#nerby'>Home</a>
           <a href='https://google.com'>About Us</a>
           <a href='https://google.com'>Contact Us</a>
         </div>

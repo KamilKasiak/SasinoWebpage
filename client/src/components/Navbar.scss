@@ -1,12 +1,14 @@
 @import '../App.scss';
 
 .navbar {
-  max-width: 100%;
-  max-height: 100%;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 30px;
   display: flex;
   padding: 4%;
   background-color: transparent;
-
+  z-index: 99;
   .left-nav {
     flex: 1;
     h1 {

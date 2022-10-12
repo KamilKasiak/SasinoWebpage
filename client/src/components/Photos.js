@@ -14,7 +14,7 @@ const Photos = () => {
         <div className='outside'>
           <h3>What is outside</h3>
         </div>
-        <div className='nearby'>
+        <div className='nearby' id='nerby'>
           <h3>What is nearby</h3>
         </div>
       </div>

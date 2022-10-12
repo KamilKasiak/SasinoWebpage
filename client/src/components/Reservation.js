@@ -1,4 +1,5 @@
 import './Reservation.scss';
+import Photos from './Photos';
 
 const Reservation = () => {
   return (
@@ -8,6 +9,9 @@ const Reservation = () => {
       <div className='call-to-action'>
         <button className='cta-main'>Check availability</button>
         <button className='cta-sec'>Watch photos</button>
+      </div>
+      <div id='photos'>
+        <Photos />
       </div>
     </div>
   );
