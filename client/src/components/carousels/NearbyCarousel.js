@@ -1,3 +1,4 @@
+import bootstrap from 'bootstrap';
 import beach from '../../assets/nearby/beach.jpeg';
 import beach2 from '../../assets/nearby/beach2.png';
 import forest from '../../assets/nearby/forest.jpeg';

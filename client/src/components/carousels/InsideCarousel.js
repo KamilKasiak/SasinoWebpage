@@ -1,3 +1,4 @@
+import bootstrap from 'bootstrap';
 import salon from '../../assets/inside/salon.jpg';
 import bedroom1 from '../../assets/inside/bedroom.jpg';
 import bedroom2 from '../../assets/inside/bedroom2.jpg';

@@ -39,6 +39,7 @@
       z-index: 2;
       opacity: 0.8;
       text-shadow: 2px 2px 4px #181818;
+      // display: none;
     }
     .overlay {
       font-family: 'rooster';
@@ -47,7 +48,7 @@
       letter-spacing: 0.6rem;
       mix-blend-mode: color-burn;
       position: absolute;
-      padding-top: 1rem;
+      padding-top: 15px;
       inset: 0;
       color: #fff;
       z-index: 1;
@@ -60,5 +61,10 @@
     height: 99%;
     background-color: #fff;
     z-index: -1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .overlay {
+    padding-top: 0px !important;
   }
 }

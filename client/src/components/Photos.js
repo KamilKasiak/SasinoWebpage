@@ -21,19 +21,23 @@ const Photos = () => {
         document.getElementById('inside').contains(e.target)
       ) {
         setCarousel1(true);
-      } else if (
+      } else {
+        setCarousel1(false);
+      }
+      if (
         document.getElementById('outsideCarousel').contains(e.target) ||
         document.getElementById('outside').contains(e.target)
       ) {
         setCarousel2(true);
-      } else if (
+      } else {
+        setCarousel2(false);
+      }
+      if (
         document.getElementById('nearbyCarousel').contains(e.target) ||
         document.getElementById('nearby').contains(e.target)
       ) {
         setCarousel3(true);
       } else {
-        setCarousel1(false);
-        setCarousel2(false);
         setCarousel3(false);
       }
     });
@@ -54,7 +58,19 @@ const Photos = () => {
           }}
         >
           <h3>What is inside?</h3>
-          <img src={salon} alt='salon' />
+          <div className='photos-image'>
+            <img src={salon} alt='salon' />
+          </div>
+          {/* <div
+            id='insideCarousel'
+           className={
+              carousel1
+                ? 'animate__animated animate__fadeInLeft insideCarousel'
+                : 'hide'
+            }
+          >
+            {carousel1 ? <InsideCarousel /> : null}
+          </div>  */}
         </div>
         <div
           id='outside'
@@ -65,7 +81,9 @@ const Photos = () => {
           }}
         >
           <h3>What is outside?</h3>
-          <img src={sauna} alt='sauna' />
+          <div className='photos-image'>
+            <img src={sauna} alt='sauna' />
+          </div>
         </div>
         <div
           id='nearby'
@@ -76,13 +94,15 @@ const Photos = () => {
           }}
         >
           <h3>What is nearby?</h3>
-          <img src={beach} alt='beach' />
+          <div className='photos-image'>
+            <img src={beach} alt='beach' />
+          </div>
         </div>
         <div
           id='insideCarousel'
           className={
             carousel1
-              ? 'animate__animated animate__fadeInLeft insideCarousel'
+              ? 'animate__animated animate__fadeInLeft insideCarousel small1'
               : 'hide'
           }
         >
@@ -92,7 +112,7 @@ const Photos = () => {
           id='outsideCarousel'
           className={
             carousel2
-              ? 'animate__animated animate__fadeInUp insideCarousel'
+              ? 'animate__animated animate__fadeInUp insideCarousel small2'
               : 'hide'
           }
         >
@@ -102,7 +122,7 @@ const Photos = () => {
           id='nearbyCarousel'
           className={
             carousel3
-              ? 'animate__animated animate__fadeInRight insideCarousel'
+              ? 'animate__animated animate__fadeInRight insideCarousel small3'
               : 'hide'
           }
         >

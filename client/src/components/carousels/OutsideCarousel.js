@@ -1,3 +1,4 @@
+import bootstrap from 'bootstrap';
 import saunaOutside from '../../assets/outside/saunaOutside.jpg';
 import saunaInside from '../../assets/outside/saunaInside.jpg';
 import monkeyGrove from '../../assets/outside/monkeyGrove.jpg';
