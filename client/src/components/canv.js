@@ -7,19 +7,19 @@ export default function canv() {
     $.fillRect(x, y, 1, 1);
   };
   var R = function (x, y, t) {
-    return Math.floor(192 + 64 * Math.cos((x * x - y * y) / 300 + t));
+    return Math.floor(172 + 64 * Math.cos((x * x - y * y) / 300 + t));
   };
 
   var G = function (x, y, t) {
     return Math.floor(
-      192 +
+      162 +
         64 * Math.sin((x * x * Math.cos(t / 4) + y * y * Math.sin(t / 3)) / 300)
     );
   };
 
   var B = function (x, y, t) {
     return Math.floor(
-      192 +
+      172 +
         64 *
           Math.sin(
             5 * Math.sin(t / 9) +
@@ -38,7 +38,7 @@ export default function canv() {
         col(x, y, R(x, y, t), G(x, y, t), B(x, y, t));
       }
     }
-    t = t + 0.01;
+    t = t + 0.02;
     window.requestAnimationFrame(run);
   };
 

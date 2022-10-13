@@ -38,6 +38,7 @@
       mix-blend-mode: color-burn;
       z-index: 2;
       opacity: 0.8;
+      text-shadow: 2px 2px 4px #181818;
     }
     .overlay {
       font-family: 'rooster';
@@ -50,7 +51,6 @@
       inset: 0;
       color: #fff;
       z-index: 1;
-      opacity: 1;
     }
   }
   .white-box {

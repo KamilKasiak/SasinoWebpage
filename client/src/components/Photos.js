@@ -1,30 +1,112 @@
+import * as React from 'react';
+import { useState } from 'react';
+import 'animate.css';
 import './Photos.scss';
+import salon from '../assets/carouselCaller/insideSalon.jpg';
+import sauna from '../assets/carouselCaller/outsideSauna.jpg';
+import beach from '../assets/carouselCaller/beachSmall.jpg';
+import InsideCarousel from './carousels/InsideCarousel';
+import OutsideCarousel from './carousels/OutsideCarousel';
+import NearbyCarousel from './carousels/NearbyCarousel';
 
 const Photos = () => {
+  const [carousel1, setCarousel1] = useState(false);
+  const [carousel2, setCarousel2] = useState(false);
+  const [carousel3, setCarousel3] = useState(false);
+
+  React.useEffect(() => {
+    document.addEventListener('click', function (e) {
+      if (
+        document.getElementById('insideCarousel').contains(e.target) ||
+        document.getElementById('inside').contains(e.target)
+      ) {
+        setCarousel1(true);
+      } else if (
+        document.getElementById('outsideCarousel').contains(e.target) ||
+        document.getElementById('outside').contains(e.target)
+      ) {
+        setCarousel2(true);
+      } else if (
+        document.getElementById('nearbyCarousel').contains(e.target) ||
+        document.getElementById('nearby').contains(e.target)
+      ) {
+        setCarousel3(true);
+      } else {
+        setCarousel1(false);
+        setCarousel2(false);
+        setCarousel3(false);
+      }
+    });
+  });
+
   return (
     <div className='photo-section'>
       <div className='photos-description'>
         <h2>House tailored for you</h2>
-        <h3>It's is time to heal your mind and body</h3>
+        <h3>It's time to heal your mind and body</h3>
       </div>
-      <div className='photos'>
-        <div className='inside'>
+      <div className='photos' id='photos'>
+        <div
+          id='inside'
+          className='inside'
+          onClick={() => {
+            setCarousel1(true);
+          }}
+        >
           <h3>What is inside?</h3>
+          <img src={salon} alt='salon' />
         </div>
-        <div className='outside'>
-          <h3>What is outside</h3>
+        <div
+          id='outside'
+          className='outside'
+          alt='outside'
+          onClick={() => {
+            setCarousel2(true);
+          }}
+        >
+          <h3>What is outside?</h3>
+          <img src={sauna} alt='sauna' />
         </div>
-        <div className='nearby' id='nerby'>
-          <h3>What is nearby</h3>
+        <div
+          id='nearby'
+          className='nearby'
+          alt='nearby'
+          onClick={() => {
+            setCarousel3(true);
+          }}
+        >
+          <h3>What is nearby?</h3>
+          <img src={beach} alt='beach' />
         </div>
-        <div className='inside'>
-          <h3>What is inside?</h3>
+        <div
+          id='insideCarousel'
+          className={
+            carousel1
+              ? 'animate__animated animate__fadeInLeft insideCarousel'
+              : 'hide'
+          }
+        >
+          {carousel1 ? <InsideCarousel /> : null}
         </div>
-        <div className='outside'>
-          <h3>What is outside</h3>
+        <div
+          id='outsideCarousel'
+          className={
+            carousel2
+              ? 'animate__animated animate__fadeInUp insideCarousel'
+              : 'hide'
+          }
+        >
+          {carousel2 ? <OutsideCarousel /> : null}
         </div>
-        <div className='nearby' id='nerby'>
-          <h3>What is nearby</h3>
+        <div
+          id='nearbyCarousel'
+          className={
+            carousel3
+              ? 'animate__animated animate__fadeInRight insideCarousel'
+              : 'hide'
+          }
+        >
+          {carousel3 ? <NearbyCarousel /> : null}
         </div>
       </div>
     </div>
