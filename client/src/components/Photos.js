@@ -45,90 +45,82 @@ const Photos = () => {
 
   return (
     <div className='photo-section'>
-      <div className='photos-description'>
-        <h2>House tailored for you</h2>
-        <h3>It's time to heal your mind and body</h3>
-      </div>
-      <div className='photos' id='photos'>
-        <div
-          id='inside'
-          className='inside'
-          onClick={() => {
-            setCarousel1(true);
-          }}
-        >
-          <h3>What is inside?</h3>
-          <div className='photos-image'>
-            <img src={salon} alt='salon' />
+      <section>
+        <div className='photos-description'>
+          <h2>House tailored for you</h2>
+          <h3>It's time to heal your mind and body</h3>
+        </div>
+        <div className='photos'>
+          <div
+            id='inside'
+            className='inside'
+            onClick={() => {
+              setCarousel1(true);
+            }}
+          >
+            <h3>What is inside?</h3>
+            <div className='photos-image'>
+              <img className='photo' src={salon} alt='salon' />
+            </div>
           </div>
-          {/* <div
+          <div
+            id='outside'
+            className='outside'
+            alt='outside'
+            onClick={() => {
+              setCarousel2(true);
+            }}
+          >
+            <h3>What is outside?</h3>
+            <div className='photos-image'>
+              <img className='photo' src={sauna} alt='sauna' />
+            </div>
+          </div>
+          <div
+            id='nearby'
+            className='nearby'
+            alt='nearby'
+            onClick={() => {
+              setCarousel3(true);
+            }}
+          >
+            <h3>What is nearby?</h3>
+            <div className='photos-image'>
+              <img className='photo' src={beach} alt='beach' />
+            </div>
+          </div>
+          <div
             id='insideCarousel'
-           className={
+            className={
               carousel1
-                ? 'animate__animated animate__fadeInLeft insideCarousel'
+                ? 'animate__animated animate__fadeInLeft insideCarousel small1'
                 : 'hide'
             }
           >
             {carousel1 ? <InsideCarousel /> : null}
-          </div>  */}
-        </div>
-        <div
-          id='outside'
-          className='outside'
-          alt='outside'
-          onClick={() => {
-            setCarousel2(true);
-          }}
-        >
-          <h3>What is outside?</h3>
-          <div className='photos-image'>
-            <img src={sauna} alt='sauna' />
+          </div>
+          <div
+            id='outsideCarousel'
+            className={
+              carousel2
+                ? 'animate__animated animate__fadeInUp insideCarousel small2'
+                : 'hide'
+            }
+          >
+            {carousel2 ? <OutsideCarousel /> : null}
+          </div>
+          <div
+            id='nearbyCarousel'
+            className={
+              carousel3
+                ? 'animate__animated animate__fadeInRight insideCarousel small3'
+                : 'hide'
+            }
+          >
+            {carousel3 ? <NearbyCarousel /> : null}
           </div>
         </div>
-        <div
-          id='nearby'
-          className='nearby'
-          alt='nearby'
-          onClick={() => {
-            setCarousel3(true);
-          }}
-        >
-          <h3>What is nearby?</h3>
-          <div className='photos-image'>
-            <img src={beach} alt='beach' />
-          </div>
-        </div>
-        <div
-          id='insideCarousel'
-          className={
-            carousel1
-              ? 'animate__animated animate__fadeInLeft insideCarousel small1'
-              : 'hide'
-          }
-        >
-          {carousel1 ? <InsideCarousel /> : null}
-        </div>
-        <div
-          id='outsideCarousel'
-          className={
-            carousel2
-              ? 'animate__animated animate__fadeInUp insideCarousel small2'
-              : 'hide'
-          }
-        >
-          {carousel2 ? <OutsideCarousel /> : null}
-        </div>
-        <div
-          id='nearbyCarousel'
-          className={
-            carousel3
-              ? 'animate__animated animate__fadeInRight insideCarousel small3'
-              : 'hide'
-          }
-        >
-          {carousel3 ? <NearbyCarousel /> : null}
-        </div>
-      </div>
+      </section>
     </div>
   );
 };
