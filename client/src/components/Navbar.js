@@ -9,7 +9,7 @@ const Navbar = () => {
     setIsActive((prev) => !prev);
     if (isActive) {
       gsap.to('.links', { x: '100%' });
-      gsap.to('.line', { stroke: 'white' });
+      gsap.to('.line', { stroke: 'forestgreen' });
       gsap.set('.App', { overflowY: 'auto' });
     } else {
       gsap.to('.links', { x: '0%' });
@@ -41,42 +41,43 @@ const Navbar = () => {
           Contact Us
         </a>
       </div>
-      <svg
-        className='burger'
-        onClick={() => {
-          handleBurgerClick();
-        }}
-        width='44'
-        height='18'
-        viewBox='0 0 44 18'
-        fill='none'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <line
-          className='line'
-          y1='1'
-          x2='44'
-          y2='1'
-          stroke='white'
-          strokeWidth='2'
-        />
-        <line
-          className='line'
-          y1='9'
-          x2='27'
-          y2='9'
-          stroke='white'
-          strokeWidth='2'
-        />
-        <line
-          className='line'
-          y1='17'
-          x2='11'
-          y2='17'
-          stroke='white'
-          strokeWidth='2'
-        />
-      </svg>
+      <div className='burger'>
+        <svg
+          onClick={() => {
+            handleBurgerClick();
+          }}
+          width='44'
+          height='18'
+          viewBox='0 0 44 18'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <line
+            className='line'
+            y1='1'
+            x2='44'
+            y2='1'
+            stroke='white'
+            strokeWidth='2'
+          />
+          <line
+            className='line'
+            y1='9'
+            x2='27'
+            y2='9'
+            stroke='white'
+            strokeWidth='2'
+          />
+          <line
+            className='line'
+            y1='17'
+            x2='11'
+            y2='17'
+            stroke='white'
+            strokeWidth='2'
+          />
+        </svg>
+      </div>
     </div>
   );
 };
