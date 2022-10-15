@@ -45,7 +45,8 @@
     .for-title {
       position: relative;
       display: block;
-      min-height: 60%;
+      min-height: 42%;
+      margin-bottom: 3rem;
     }
 
     .library {
@@ -54,18 +55,19 @@
       height: 100%;
       font-family: stone, sans-serif;
       color: #3a3a3a;
-      bottom: -5%;
+      bottom: 0;
       padding: 2rem;
       padding-top: 0;
       margin-top: 1rem;
       h2 {
-        font-size: 3rem;
+        // font-size: 3rem;
+        font-size: calc(1.375rem + 1.5vw);
         line-height: 125%;
         padding: 1rem 0rem;
         text-shadow: 4px 4px 8px #181818;
       }
       h3 {
-        font-size: 1.5rem;
+        font-size: calc(0.9rem + 1.5vw);
         line-height: 125%;
         text-shadow: 4px 4px 8px #181818;
         padding-bottom: 0;

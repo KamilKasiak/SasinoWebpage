@@ -10,6 +10,9 @@
   align-content: center;
   border-radius: 20px 20px 0 0;
   box-shadow: 4px -4px 6px #181818;
+  animation: fadeInUp 1s 0.5s;
+  animation-fill-mode: backwards;
+  clear: both;
   .photos-description {
     padding-bottom: 3rem;
   }
@@ -62,7 +65,7 @@
     }
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 726px) {
   .photos {
     flex-direction: column !important;
   }

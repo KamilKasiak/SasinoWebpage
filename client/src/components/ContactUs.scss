@@ -1,0 +1,118 @@
+.contact-us-box {
+  margin-bottom: 2rem;
+  padding-block: 2rem;
+  h1 {
+    margin-bottom: 2rem;
+  }
+  .date-and-contact-box {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.date-range-picker {
+  flex: 1;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  justify-content: center;
+}
+.contact-form {
+  flex: 1;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 3rem;
+
+  label {
+    width: 100%;
+    height: 100%;
+    &::after {
+      content: attr(picked-date);
+    }
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin-bottom: 10px;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      animation: fadeInUp 2s 2s;
+      animation-fill-mode: forwards;
+      clear: both;
+      box-shadow: 4px 4px 8px #131313;
+      box-sizing: border-box;
+      &:last-child {
+        border: none;
+        box-shadow: none;
+        padding-block: 1rem;
+      }
+    }
+  }
+  input[type='text'],
+  input[type='email'] {
+    width: 100%;
+    border: 0;
+    background: #fff;
+    height: calc(1.375rem + 1.5vw);
+    font-size: 1.1rem;
+    color: #3a3a3a;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  textarea {
+    width: 100%;
+    height: calc(4.5rem + 5.5vw) !important;
+    border: 0;
+    background: #fff;
+    font-size: 1.1rem;
+    color: #3a3a3a;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+  .send-button {
+    color: #131313;
+    min-width: 40%;
+    background: 0 0;
+    font-size: calc(0.8rem + 0.5vw);
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border: 1px solid #3a3a3a;
+    box-shadow: 6px 6px 8px #131313;
+    border-radius: 4px;
+    animation: fadeIn 1s 1.8s backwards;
+    white-space: nowrap;
+
+    &:hover {
+      background: #3a3a3a;
+      color: #fff;
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 10px #131313;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .date-and-contact-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .date-range-picker {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    scale: 130%;
+    .rdrMonth {
+      scale: 120%;
+      left: 15%;
+      position: relative;
+      background-color: aqua;
+    }
+  }
+}
