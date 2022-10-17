@@ -1,9 +1,8 @@
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import * as React from 'react';
-import { DateRangePicker } from 'react-date-range';
 import { DateRange } from 'react-date-range';
-import { addDays } from 'date-fns';
+import { addDays, format } from 'date-fns';
 import { useState } from 'react';
 import './ContactUs.scss';
 
@@ -22,44 +21,46 @@ const ContactUs = () => {
 
   const handleTextareaChange = (e) => {
     if (state) {
+      setMessageAndDate(e.target.value);
+    }
+  };
+
+  const handleFormatDate = () => {
+    if ((state[0].startDate && state[0].endDate) != '') {
       const startDate = state[0].startDate.toDateString();
-      const formatedStartDate = new Date(startDate).toLocaleDateString(
-        'en-gb',
-        {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        }
-      );
+      const formatedStartDate = format(new Date(startDate), 'dd MMMM `yy');
       setStartDay(formatedStartDate);
       const endDate = state[0].endDate.toDateString();
-      const formatedEndDate = new Date(endDate).toLocaleDateString('en-gb', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      });
+      const formatedEndDate = format(new Date(endDate), 'dd MMMM `yy');
       setEndDay(formatedEndDate);
+
       setMessage(
-        `I would like to make reservation from ${startDay} to ${endDay}`
+        `I would like to make reservation from: ${startDay} to: ${endDay}`
       );
     }
-    setMessageAndDate(e.target.value);
   };
+  const firstDate = document.getElementsByClassName(
+    '.rdeDateDisplayItem'
+  ).value;
+  console.log('getName ' + firstDate);
 
   return (
     <div className='contact-us-box'>
-      <h1>Hi there! Contact Us</h1>
+      <h1>Let us know when would you like to come :)</h1>
       <div className='date-and-contact-box'>
         <div className='date-range-picker'>
           <DateRange
             editableDateInputs={true}
-            onChange={(item) => {
-              setState([item.selection]);
-            }}
             moveRangeOnFirstSelection={false}
             ranges={state}
             months={1}
             direction='horizontal'
+            rangeColors={['#3a3a3a']}
+            minDate={new Date()}
+            onChange={(item) => {
+              setState([item.selection]);
+              handleFormatDate();
+            }}
           />
         </div>
         <div className='contact-form'>

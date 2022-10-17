@@ -89,12 +89,16 @@
     border-radius: 4px;
     animation: fadeIn 1s 1.8s backwards;
     white-space: nowrap;
-
     &:hover {
       background: #3a3a3a;
       color: #fff;
       transform: translate(-2px, -2px);
       box-shadow: 8px 8px 10px #131313;
+    }
+    &:active {
+      scale: 95%;
+      box-shadow: 4px 4px 5px #131313;
+      transition: ease-out 100ms;
     }
   }
 }
@@ -108,11 +112,28 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
     scale: 130%;
+    padding-bottom: 2rem;
+
+    select {
+      font-size: 0.6rem;
+    }
+    input {
+      font-size: 0.6rem;
+    }
     .rdrMonth {
       scale: 120%;
       left: 15%;
       position: relative;
-      background-color: aqua;
+      background-color: #867b7b;
+      border-radius: 4px;
+      span {
+        font-size: 0.6rem;
+        color: #131313;
+      }
+      .rdrMonthName {
+        font-size: 0.6rem;
+        color: #131313;
+      }
     }
   }
 }
